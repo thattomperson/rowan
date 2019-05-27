@@ -2,7 +2,7 @@
 Pokemon evolution tree for Pokémon and Pokécord
 
 ## Commands
-- ,evo <pokemon name or id> 
+- ,evo [Pokemon name or ID]
 - ,fact
   
 More to come
