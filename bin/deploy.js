@@ -60,5 +60,5 @@ function deploy() {
   spawn(`aws ecs update-service --service rowan --task-definition rowan:${revision}`)
 }
 
-// build();
+build();
 deploy()
