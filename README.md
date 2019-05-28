@@ -2,9 +2,9 @@
 Pokemon evolution tree for Pokémon and Pokécord
 
 ## Commands
-- ,evo [Pokemon name or ID]
+- ,evolutions <pokemon name or id> 
+- ,evo <pokemon name or id> # alias for evolutions
 - ,fact
-  
 More to come
 
 ## Why?
