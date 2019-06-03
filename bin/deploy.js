@@ -1,6 +1,8 @@
 const spawnSync = require("child_process").spawnSync;
 
 const config = require('dotenv').config()
+require('debug').enable("rowan:*")
+
 
 function spawn(command) {
   const args = command.split(/ +/);
@@ -20,18 +22,21 @@ function spawn(command) {
 const sha = spawn('git rev-parse --verify HEAD')
 
 function build() {
+  const debug = require('debug')('rowan:build')
   
-  console.log('docker build')
+  debug('building container')
   spawn(`docker build -t ${process.env.DOCKER_REPO}:${sha} .`)
 
-  console.log('docker login')
+  debug('loging into container registry')
   spawn(spawn('aws ecr get-login --no-include-email'))
 
-  console.log('docker push')
+  debug('pushing container to registry')
   spawn(`docker push ${process.env.DOCKER_REPO}:${sha}`)
+  debug('done')
 }
 
 function deploy() {
+  const debug = require('debug')('rowan:deploy')
   let env = [];
   for (name in config.parsed) {
     env.push({
@@ -51,13 +56,14 @@ function deploy() {
     "name": "rowan"
   }]
   
-  console.log('making new TaskDefinition')
+  debug('making new TaskDefinition')
   const out = spawn(`aws ecs register-task-definition --family rowan --container-definitions ${JSON.stringify(containerDefinitions)}`)
 
   const revision = JSON.parse(out).taskDefinition.revision
   
-  console.log('updating service')
+  debug('updating service')
   spawn(`aws ecs update-service --service rowan --task-definition rowan:${revision}`)
+  debug('done')
 }
 
 build();
