@@ -15,6 +15,7 @@
   ],
   "scripts": {
     "start": "node lib/index.js",
+    "deploy": "node bin/deploy.js",
     "test": "echo \"Error: run tests from root\" && exit 1"
   },
   "dependencies": {
