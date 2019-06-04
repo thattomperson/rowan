@@ -51,7 +51,7 @@ function deploy() {
       "options": {"awslogs-group": "/ecs/rowan", "awslogs-region": "ap-southeast-2", "awslogs-stream-prefix": "ecs"}
     },
     "environment": env,
-    "memory": 64,
+    "memory": 256,
     "image": `${process.env.DOCKER_REPO}:${sha}`,
     "name": "rowan"
   }]
