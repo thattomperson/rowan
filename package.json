@@ -15,8 +15,9 @@
   ],
   "scripts": {
     "start": "node lib/index.js",
+    "watch": "npx nodemon",
     "deploy": "node bin/deploy.js",
-    "test": "echo \"Error: run tests from root\" && exit 1"
+    "test": "jest"
   },
   "dependencies": {
     "dblapi.js": "^2.3.0",
@@ -27,6 +28,7 @@
     "rollbar": "^2.7.1"
   },
   "devDependencies": {
-    "dotenv": "^8.0.0"
+    "dotenv": "^8.0.0",
+    "jest": "^24.8.0"
   }
 }

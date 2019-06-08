@@ -1,6 +1,10 @@
 const spawnSync = require("child_process").spawnSync;
 
 const config = require('dotenv').config()
+
+config.DISCORD_TOKEN = config.DISCORD_PROD_TOKEN;
+delete config.DISCORD_PROD_TOKEN;
+
 require('debug').enable("rowan:*")
 
 
