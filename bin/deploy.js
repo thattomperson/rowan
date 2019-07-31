@@ -1,6 +1,6 @@
 const spawnSync = require("child_process").spawnSync;
 
-const config = require('dotenv').config()
+const config = require('dotenv').config().parsed
 
 config.DISCORD_TOKEN = config.DISCORD_PROD_TOKEN;
 delete config.DISCORD_PROD_TOKEN;
@@ -42,10 +42,10 @@ function build() {
 function deploy() {
   const debug = require('debug')('rowan:deploy')
   let env = [];
-  for (name in config.parsed) {
+  for (name in config) {
     env.push({
       name,
-      value: config.parsed[name] 
+      value: config[name] 
     })
   }
 
@@ -56,8 +56,12 @@ function deploy() {
     },
     "environment": env,
     "memory": 200,
+    "memoryReservation": 100,
     "image": `${process.env.DOCKER_REPO}:${sha}`,
-    "name": "rowan"
+    "name": "rowan",
+    "links": [
+      "redis"
+    ]
   }]
   
   debug('making new TaskDefinition')
