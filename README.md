@@ -1,5 +1,6 @@
-# Rowan
+# Rowan [![Build Status](https://travis-ci.com/thattomperson/rowan.svg?branch=master)](https://travis-ci.com/thattomperson/rowan)
 Pokémon evolution tree for Pokémon and Pokécord
+
 
 ## Commands
 - r!help
