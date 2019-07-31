@@ -1,4 +1,7 @@
 # Rowan
+
+[![Greenkeeper badge](https://badges.greenkeeper.io/thattomperson/rowan.svg)](https://greenkeeper.io/)
+
 Pokémon evolution tree for Pokémon and Pokécord
 
 ## Commands
