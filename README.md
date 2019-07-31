@@ -1,8 +1,10 @@
 # Rowan
 
 [![Greenkeeper badge](https://badges.greenkeeper.io/thattomperson/rowan.svg)](https://greenkeeper.io/)
+[![Build Status](https://travis-ci.com/thattomperson/rowan.svg?branch=master)](https://travis-ci.com/thattomperson/rowan)
 
 Pokémon evolution tree for Pokémon and Pokécord
+
 
 ## Commands
 - r!help
