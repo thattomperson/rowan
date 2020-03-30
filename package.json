@@ -31,6 +31,6 @@
   "devDependencies": {
     "dotenv": "^8.0.0",
     "jest": "^24.8.0",
-    "jimp": "^0.9.0"
+    "jimp": "^0.10.0"
   }
 }
