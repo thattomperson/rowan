@@ -13,7 +13,8 @@ function spawn(command) {
 	const commandName = args.shift();
 
   const out = spawnSync(commandName, args, {
-    env: {...process.env, AWS_PROFILE: 'personal'},
+    env: {...process.env},
+    encoding: null,
   })
 
   if (out.status !== 0) {
