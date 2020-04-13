@@ -22,7 +22,4 @@ perms.map(t => t.map(async name => {
 
     img.write(path.join(basePath, `${name}.png`))
   })
-  
-
-  console.log(name)
 }))
