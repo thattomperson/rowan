@@ -23,7 +23,7 @@
   "dependencies": {
     "dblapi.js": "^2.3.0",
     "debug": "^4.1.1",
-    "discord.js": "^12.1.1",
+    "discord.js": "12.1.1",
     "pokedex-promise-v2": "^3.2.0",
     "rollbar": "^2.9.0"
   },
